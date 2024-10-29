@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "jotai": "^2.10.1",
+    "jotai-devtools": "^0.10.1",
     "jotai-location": "^0.5.5",
     "next": "15.0.1",
     "react": "19.0.0-rc-69d4b800-20241021",
