@@ -2,11 +2,11 @@ import { atom, useAtom } from "jotai";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { atomWithLocation } from "jotai-location";
+import { useRouter } from "next/navigation";
 
 // create atom with location
 const locationAtom = atomWithLocation();
 locationAtom.debugLabel = "locationAtom";
-
 
 export const priceAtom = atom(10);
 priceAtom.debugLabel = "priceAtom";
@@ -16,6 +16,7 @@ const HomePage = () => {
   const [count, setCount] = useAtom(priceAtom);
   // create state Atom
   const [loc, setLoc] = useAtom(locationAtom);
+  const router = useRouter();
 
   // get query params
   const example = loc.searchParams?.get("example") || "";
@@ -44,6 +45,8 @@ const HomePage = () => {
     }));
 
     alert(JSON.stringify(data));
+
+    router.push("/atomWithStorage");
   };
 
   return (
